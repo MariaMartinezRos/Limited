@@ -1,4 +1,4 @@
-# Procedural Maze Generation in Unity (UNFINISHED)
+# Limited (UNFINISHED)
 
 ## Overview
 This project right now is a procedural maze generator built in Unity. It creates a labyrinth with branching paths and loops, allowing players to explore and get lost in the maze. The maze is generated using a modified version of the depth-first search algorithm, which ensures a more complex and interconnected layout.
@@ -35,7 +35,7 @@ This project was made possible thanks to the following resources and contributio
   The project uses the **Stylized Hand Painted Dungeon** asset pack, which provided the beautiful environment and room designs.  
   Download it here: [Stylized Hand Painted Dungeon (Free)](https://assetstore.unity.com/packages/3d/environments/stylized-hand-painted-dungeon-free-173934).
 
-  **Flashlight**
+  **Flashlight**.
   Download it here: [Flashlight (Free)](https://assetstore.unity.com/packages/3d/props/electronics/flashlight-18972).
 
 - **Unity Community**:  
