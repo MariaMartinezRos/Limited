@@ -24,13 +24,19 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Acknowledgments
 This project was made possible thanks to the following resources and contributions:
 
-- **Maze Tutorial**:  
-  A huge thanks to [SilverlyBee](https://www.youtube.com/@SilverlyBee) for their amazing tutorial on procedural maze generation.  
+- **Tutorials**:  
+  Thanks to [SilverlyBee](https://www.youtube.com/@SilverlyBee) for their tutorial on procedural maze generation.  
   Watch the tutorial here: [Procedural Maze Generation Tutorial](https://youtu.be/gHU5RQWbmWE?si=tkLtOUdwoUPiGAQu).
+
+  Thanks to [Dev Ritch](https://www.youtube.com/@devritch) for their tutorial on how to add a working flashlight.
+  Watch the tutorial here: [Procedural Maze Generation Tutorial](https://youtu.be/xPwfDeMe8tk?si=P16umWDxfVMK3R4k).
 
 - **Unity Assets**:  
   The project uses the **Stylized Hand Painted Dungeon** asset pack, which provided the beautiful environment and room designs.  
   Download it here: [Stylized Hand Painted Dungeon (Free)](https://assetstore.unity.com/packages/3d/environments/stylized-hand-painted-dungeon-free-173934).
+
+  **Flashlight**
+  Download it here: [Flashlight (Free)](https://assetstore.unity.com/packages/3d/props/electronics/flashlight-18972).
 
 - **Unity Community**:  
   Special thanks to the Unity community for their endless support, tutorials, and resources that made this project possible.

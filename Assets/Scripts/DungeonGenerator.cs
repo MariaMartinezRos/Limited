@@ -183,7 +183,7 @@ public class DungeonGenerator : MonoBehaviour
                 path.Push(currentCell);
 
                 // Randomly decide whether to create a loop
-                if (Random.Range(0, 100) < 10) // 10% chance to create a loop
+                if (Random.Range(0, 100) < 50) // 50% chance to create a loop
                 {
                     List<int> visitedNeighbors = CheckVisitedNeighbors(currentCell);
                     if (visitedNeighbors.Count > 0)
