@@ -29,7 +29,10 @@ This project was made possible thanks to the following resources and contributio
   Watch the tutorial here: [Procedural Maze Generation Tutorial](https://youtu.be/gHU5RQWbmWE?si=tkLtOUdwoUPiGAQu).
 
   Thanks to [Dev Ritch](https://www.youtube.com/@devritch) for their tutorial on how to add a working flashlight.
-  Watch the tutorial here: [Procedural Maze Generation Tutorial](https://youtu.be/xPwfDeMe8tk?si=P16umWDxfVMK3R4k).
+  Watch the tutorial here: [Flashlight Tutorial](https://youtu.be/xPwfDeMe8tk?si=P16umWDxfVMK3R4k).
+
+  Thanks to [BMoDev](https://www.youtube.com/@BMoDev) for their tutorial on how to add a menu in Unity.  
+  Watch the tutorial here: [Menu Tutorial](https://youtu.be/-GWjA6dixV4?si=GWEs7aPwBIfkl6ey).
 
 - **Unity Assets**:  
   The project uses the **Stylized Hand Painted Dungeon** asset pack, which provided the beautiful environment and room designs.  
