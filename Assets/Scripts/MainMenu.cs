@@ -26,6 +26,6 @@ public class MainMenu : MonoBehaviour
     public void GoToMainMenu()
     {
         // Open the about menu
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("MainMenu");
     }
 }

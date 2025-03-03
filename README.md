@@ -12,7 +12,7 @@ This project right now is a procedural maze generator built in Unity. It creates
 ## Installation
 1. Clone the repository or download the project files.
 2. Open the project in Unity (version 2020.3 or later recommended).
-3. Navigate to the `Scenes` folder and open the `Example`.
+3. Navigate to the `Scenes` folder and open the `Menu`.
 4. Press `Play` to generate and explore the maze.
 
 ## Contributing
