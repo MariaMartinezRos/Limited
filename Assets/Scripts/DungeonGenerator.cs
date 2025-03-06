@@ -33,6 +33,8 @@ public class DungeonGenerator : MonoBehaviour
 
     }
 
+    public GameObject skeletonPrefab;
+
     public GameObject playerPrefab; // Assign this in the Inspector
     private Vector3 spawnPosition = Vector3.zero; // Default spawn point
 
@@ -50,63 +52,115 @@ public class DungeonGenerator : MonoBehaviour
         MazeGenerator();
     }
 
-   void GenerateDungeon()
+void GenerateDungeon()
+{
+    GameObject firstRoom = null;
+    List<Vector3> validRoomPositions = new List<Vector3>();
+
+    for (int i = 0; i < size.x; i++)
     {
-        GameObject firstRoom = null;
-
-        for (int i = 0; i < size.x; i++)
+        for (int j = 0; j < size.y; j++)
         {
-            for (int j = 0; j < size.y; j++)
+            Cell currentCell = board[(i + j * size.x)];
+            if (currentCell.visited)
             {
-                Cell currentCell = board[(i + j * size.x)];
-                if (currentCell.visited)
+                int randomRoom = -1;
+                List<int> availableRooms = new List<int>();
+
+                for (int k = 0; k < rooms.Length; k++)
                 {
-                    int randomRoom = -1;
-                    List<int> availableRooms = new List<int>();
+                    int p = rooms[k].ProbabilityOfSpawning(i, j);
 
-                    for (int k = 0; k < rooms.Length; k++)
+                    if (p == 2)
                     {
-                        int p = rooms[k].ProbabilityOfSpawning(i, j);
-
-                        if (p == 2)
-                        {
-                            randomRoom = k;
-                            break;
-                        }
-                        else if (p == 1)
-                        {
-                            availableRooms.Add(k);
-                        }
+                        randomRoom = k;
+                        break;
                     }
-
-                    if (randomRoom == -1)
+                    else if (p == 1)
                     {
-                        if (availableRooms.Count > 0)
-                        {
-                            randomRoom = availableRooms[Random.Range(0, availableRooms.Count)];
-                        }
-                        else
-                        {
-                            randomRoom = 0;
-                        }
+                        availableRooms.Add(k);
                     }
+                }
 
-                    var newRoom = Instantiate(rooms[randomRoom].room, new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform).GetComponent<RoomBehaviour>();
-                    newRoom.UpdateRoom(currentCell.status);
-                    newRoom.name += " " + i + "-" + j;
-
-                    if (firstRoom == null) // Store the first valid room
+                if (randomRoom == -1)
+                {
+                    if (availableRooms.Count > 0)
                     {
-                        firstRoom = newRoom.gameObject;
-                        spawnPosition = firstRoom.transform.position;
+                        randomRoom = availableRooms[Random.Range(0, availableRooms.Count)];
                     }
+                    else
+                    {
+                        randomRoom = 0;
+                    }
+                }
+
+                var newRoom = Instantiate(rooms[randomRoom].room, new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform).GetComponent<RoomBehaviour>();
+                newRoom.UpdateRoom(currentCell.status);
+                newRoom.name += " " + i + "-" + j;
+
+                if (firstRoom == null) // Store the first valid room
+                {
+                    firstRoom = newRoom.gameObject;
+                    spawnPosition = firstRoom.transform.position;
+                }
+                else
+                {
+                    validRoomPositions.Add(newRoom.transform.position); // Add room position to list
                 }
             }
         }
-
-        // Spawn player after dungeon is created
-        SpawnPlayer();
     }
+
+    // Remove the player's spawn room from valid choices
+    validRoomPositions.Remove(spawnPosition);
+
+    // Ensure at least 5 skeletons spawn
+    int skeletonCount = Mathf.Min(50, validRoomPositions.Count); // Prevent out-of-bounds error
+
+    if (skeletonCount > 0)
+    {
+        List<Vector3> selectedRooms = new List<Vector3>();
+
+        // Shuffle the list to ensure randomness
+        List<Vector3> shuffledRooms = new List<Vector3>(validRoomPositions);
+        for (int i = 0; i < shuffledRooms.Count; i++)
+        {
+            int randomIndex = Random.Range(i, shuffledRooms.Count);
+            (shuffledRooms[i], shuffledRooms[randomIndex]) = (shuffledRooms[randomIndex], shuffledRooms[i]);
+        }
+
+        // Select the first 'skeletonCount' rooms from the shuffled list
+        for (int i = 0; i < skeletonCount; i++)
+        {
+            selectedRooms.Add(shuffledRooms[i]);
+        }
+
+        // Spawn skeletons in selected rooms
+        foreach (Vector3 roomPosition in selectedRooms)
+        {
+            SpawnSkeleton(roomPosition);
+        }
+    }
+
+    // Spawn player after dungeon is created
+    SpawnPlayer();
+
+    }
+
+// Function to spawn the Skeleton
+    void SpawnSkeleton(Vector3 position)
+    {
+        if (skeletonPrefab != null)
+        {
+            Instantiate(skeletonPrefab, position + Vector3.up * 2.0f, Quaternion.identity);
+        }
+        else
+        {
+            Debug.LogWarning("Skeleton prefab is not assigned in the Inspector!");
+        }
+    }
+
+
 
     void SpawnPlayer()
     {
