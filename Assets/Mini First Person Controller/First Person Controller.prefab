@@ -1760,31 +1760,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b694b8ec5c41f6247843a2b67222fda6, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.012193273
+      value: -0.01844116
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b694b8ec5c41f6247843a2b67222fda6, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.074907616
+      value: 0.0970079
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b694b8ec5c41f6247843a2b67222fda6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7976286
+      value: 0.73540586
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b694b8ec5c41f6247843a2b67222fda6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.5983551
+      value: 0.67039365
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b694b8ec5c41f6247843a2b67222fda6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -72.308
+      value: -81.73
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b694b8ec5c41f6247843a2b67222fda6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 158.963
+      value: 134.302
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b694b8ec5c41f6247843a2b67222fda6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 26.182
+      value: 55.088
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: b694b8ec5c41f6247843a2b67222fda6, type: 3}
       propertyPath: m_ApplyRootMotion
@@ -1824,6 +1824,7 @@ MonoBehaviour:
   spotlight: {fileID: 4063207240101477321}
   loopSound: {fileID: 7699092013853207546}
   loopClip: {fileID: 8300000, guid: 7dffd74ea2c3b13458497a756ecc7821, type: 3}
+  timerText: {fileID: 7510698556630742391}
 --- !u!82 &7699092013853207546
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1988,6 +1989,30 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 7c4cfd35d7e78fb44a0f5522e37c35b1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -26.414
+      objectReference: {fileID: 0}
+    - target: {fileID: 10800000, guid: 7c4cfd35d7e78fb44a0f5522e37c35b1, type: 3}
+      propertyPath: m_Range
+      value: 32.244354
+      objectReference: {fileID: 0}
+    - target: {fileID: 10800000, guid: 7c4cfd35d7e78fb44a0f5522e37c35b1, type: 3}
+      propertyPath: m_Color.b
+      value: 0.50377357
+      objectReference: {fileID: 0}
+    - target: {fileID: 10800000, guid: 7c4cfd35d7e78fb44a0f5522e37c35b1, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7268359
+      objectReference: {fileID: 0}
+    - target: {fileID: 10800000, guid: 7c4cfd35d7e78fb44a0f5522e37c35b1, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10800000, guid: 7c4cfd35d7e78fb44a0f5522e37c35b1, type: 3}
+      propertyPath: m_Intensity
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 10800000, guid: 7c4cfd35d7e78fb44a0f5522e37c35b1, type: 3}
+      propertyPath: m_SpotAngle
+      value: 66.656265
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
